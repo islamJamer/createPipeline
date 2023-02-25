@@ -1,15 +1,21 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Checkout main branch') {
       steps {
-        echo 'Build'
+        git branch: 'main', url: 'https://github.com/islamJamer/createPipeline.git'
       }
     }
 
     stage('Test') {
       steps {
         echo 'Test'
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        echo 'Deploy'
       }
     }
   }
